@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "Helvetica", "Arial", serif;
+            color: #333;
+            background-color: #333;
+            margin: 1em 10%;
+        }
+        ul, li {
+            list-style: none;
+        }
+        li {
+            float: left;
+            padding: 1em;
+        }
+        ul li a img {
+            width: 30px;
+        }
+        h1 {
+            color: #666;
+            opacity: 0.5;
+        }
+        a, p {
+            color: #c60;
+            opacity: 0.8;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        img {
+            width: 350px;
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <h1>Snapshots</h1>
+    <ul>
+        <li><a href="1.png" title="我喜欢萝莉"><img src="1.png" alt="萝莉" title="萝莉"></a></li>
+        <li><a href="2.png" title="我是足控"><img src="2.png" alt="足控" title="足控"></a></li>
+        <li><a href="3.png" title="我喜欢兽耳"><img src="3.png" alt="兽耳" title="兽耳"></a></li>
+        <li><a href="4.png" title="我喜欢精灵"><img src="4.png" alt="精灵" title="精灵"></a></li>
+    </ul>
+    <br>
+    <br>
+    <script typ="text/javascript">
+    function prepareGallery (){
+
+        var body = document.getElementsByTagName("body")[0];
+        var br = document.getElementsByTagName("br")[1];
+        var script = document.getElementsByTagName("script")[0];
+        var img = document.createElement("img");
+        img.setAttribute("id", "placeholder");
+        img.setAttribute("src", "1.png");
+        img.setAttribute("alt", "my image gallery");
+        body.insertBefore(img, br);
+        var p = document.createElement("p");
+        var text1 = document.createTextNode("我喜欢萝莉");
+        p.appendChild(text1);
+        body.insertBefore(p, script);
+        var a = document.getElementsByTagName('a');
+        var len = a.length;
+        var placeholder = document.getElementById("placeholder");
+        var description = document.getElementsByTagName("p")[0];
+        
+        if(!document.getElementsByTagName || !document.getElementById || !document.getElementById("placeholder")) {
+            return false;
+        }
+        function showPic(whichpic) {
+            var source = whichpic.getAttribute("href");
+            var title;
+            placeholder.setAttribute("src", source);
+            // placeholder.src = source;
+            title = whichpic.getAttribute("title") ? whichpic.getAttribute("title") : "";
+            // if(whichpic.getAttribute("title")) {
+            //     title = whichpic.getAttribute("title");
+            // }else {
+            //     title = "";
+            // }
+            description.firstChild.nodeValue = title;
+            // description.innerText = title;
+            return true;
+        }
+        
+        for(var i = 0; i < len; i++) {
+            (function (n) {
+                a[n].onclick = function () {
+                    return !showPic(this);
+                }
+                // a[n].onkeypress = function () {
+                //     showPic(this);
+                // }
+            }(i))
+        }
+    }
+    prepareGallery();
+    </script>
+</body>
+</html>

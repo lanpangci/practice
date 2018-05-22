@@ -1,0 +1,38 @@
+body,ul,li{
+	margin: 0;
+	padding: 0;
+}
+
+.box{
+	height: 74px;
+	background: url(weixin_bg1d20af.jpg);
+	padding-left: 300px; 
+}
+
+li{
+	list-style: none;
+	float: left;
+}
+
+li a{
+	height: 33px;
+	display: inline-block;
+	background: url(bg.png) 0 -192px;
+	line-height: 33px;
+	padding-left: 17px;
+	color: #fff;
+	text-decoration: none;
+	padding-right: 20px
+	padding-top: 20px;
+}
+
+li span{
+	height: 33px;
+	display: inline-block;
+	background: url(bg.png) right -192px;
+	padding-right: 17px;
+}
+
+li a:hover{
+	color: green;
+}

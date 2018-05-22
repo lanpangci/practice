@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		function stringLength (str) {
+			var num;
+			num = 0;
+			for(var i = 0; i < str.length; i++){
+				if(str.charCodeAt(i) <= 255){
+					num++;
+				}
+				else{
+					num += 2;
+				}
+			}
+			return num;
+		}
+
+		var str1 = window.prompt("请输入一串字符");
+		document.write(str1 + '的长度为：' + stringLength(str1));
+	</script>
+</body>
+</html>

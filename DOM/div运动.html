@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var div = document.createElement('div');
+
+        document.body.appendChild(div);
+        div.style.width = '20px';
+        div.style.height = '20px';
+        div.style.borderRadius = '50%';
+        div.style.backgroundColor = 'pink';
+        div.style.position = 'absolute';
+        div.style.left = '0';
+        div.style.top = '0';
+
+        setInterval(function () {
+            div.style.left = parseInt(div.style.left) + 1 + 'px';
+            div.style.top = parseInt(div.style.top) + 1 + 'px';
+        }, 100);
+
+
+
+    </script>
+</body>
+</html>

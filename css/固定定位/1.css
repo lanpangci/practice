@@ -1,0 +1,27 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.box{
+	width: 998px;
+	height: 1000px;
+	margin: 44px auto;
+}
+
+.top{
+	position: fixed;
+	top: 0px;
+}
+
+.left{
+	position: fixed;
+	top: 60px;
+	left: 0px;
+}
+
+.right{
+	position: fixed;
+	top: 60px;
+	right: 0px;
+}

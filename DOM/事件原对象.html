@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div class="wrapper" style="width: 100px;height: 100px;background: red;">
+        <div class="box" style="width: 50px;height: 50px;background: blue;"></div>
+    </div> -->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+    <script type="text/javascript">
+        // var wrapper = document.getElementsByTagName('div')[0];
+        // wrapper.onclick = function (e) {
+        //     var event = e || window.event;
+        //     console.log(event);
+        // }
+        //效率低，不能进行扩充
+        // var li = document.getElementsByTagName('li');
+        // var len = li.length;
+        // for(var i = 0; i < len; i++) {
+        //     li[i].onclick = function () {
+        //         console.log(this.innerText);
+        //     }
+        // }
+        var ul = document.getElementsByTagName('ul')[0];
+        ul.onclick = function(e) {
+            var event = e || window.event;
+            var target = srcElem(event);
+            console.log(target.innerText);
+        }
+    </script>
+    <script src="../有用的/tools.js"></script>
+</body>
+</html>

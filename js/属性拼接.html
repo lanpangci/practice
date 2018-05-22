@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var deng = {
+            wife1 : {name : "xiaoliu"},
+            wife2 : {name : "xiaozhang"},
+            wife3 : {name : "xiaomeng"},
+            wife4 : {name : "xiaowang"},
+            sayWife : function(num) {
+                return this['wife' + num] //方法调用实际上是这种形式
+            }
+        }
+    </script>
+</body>
+</html>

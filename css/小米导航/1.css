@@ -1,0 +1,23 @@
+div{
+	margin: 0;
+	padding: 0;
+}
+
+.nav{
+	width: 1226px;
+	height: 460px;
+	margin: 20px auto;
+	position: relative;
+}
+
+.left{
+	position: absolute;
+	left: 130px;
+	bottom: 190px;
+}
+
+.right{
+	position: absolute;
+	right: -50px;
+	bottom: 190px;
+}

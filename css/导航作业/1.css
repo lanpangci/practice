@@ -1,0 +1,38 @@
+div,ul,li{
+	margin: 0px;
+	padding: 0px;
+}
+
+ul,li{
+	list-style: none;
+}
+
+.box{
+	width: 600px;
+	height: 150px;
+	margin: 0px auto;
+	background: url(banner_bg.jpg);
+}
+
+.nav{
+	height: 32px;
+	background: url(nav_bg.jpg);
+}
+
+li{
+	float: left;
+}
+
+a{
+	display: inline-block;
+	height: 32px;
+	width: 80px;
+	background: url(a_bg.jpg);
+	line-height: 32px;
+	text-align: center;
+	text-decoration: none;
+}
+
+a:hover{
+	background: url(button2.jpg);
+}

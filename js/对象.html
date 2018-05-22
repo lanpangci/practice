@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var mrDeng = {
+
+			prepareWife : "xiaowang",
+			name : "laodeng",
+			sex : "male",
+			gf : "xiaoliu",
+			wife : "",
+			divorce : function () {
+				delete this.wife;
+				this.gf = this.prepareWife;
+			},
+			getMarried : function () {
+				this.wife = this.gf;
+			},
+			changePrepareWife : function (someone) {
+				this.prepareWife = someone;
+			}
+
+
+		}
+	</script>
+</body>
+</html>

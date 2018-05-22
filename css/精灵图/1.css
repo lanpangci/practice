@@ -1,0 +1,56 @@
+body,ul,li{
+	margin: 0;
+	padding: 0;
+}
+
+ul,li{
+	list-style: none;
+}
+
+.nav{
+	margin-top: 100px;
+	height: 48px;
+	background: #000;
+}
+
+.nav .box{
+	height: 48px;
+	width: 1182px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.nav .box li{
+	float: left;
+}
+
+.nav .box li a{
+	display: inline-block;
+	color: #fff;
+	height: 48px;
+	font: 16px/48px 微软雅黑;
+	text-decoration: none;
+	padding: 0 13px;
+}
+
+.nav .box li a:hover{
+	background: blue;
+}
+
+.nav .box .hot{
+	position: absolute;
+	background: url(sprite.png) -57px 0;
+	width: 31px;
+	height: 21px;
+	left: 285px;
+	bottom: 39px;
+}
+
+.nav .box .new{
+	position: absolute;
+	background: url(sprite.png) -135px 0;
+	width: 31px;
+	height: 21px;
+	left: 650px;
+	bottom: 39px;
+}

@@ -1,0 +1,26 @@
+.user_name{
+	border: 0 none;
+	outline-style: none;
+	background: #ccc;
+	border: 1px dashed green;
+}
+
+.user_name:focus{			/*获取光标焦点*/
+	background: red;
+}
+
+.email{
+	border: 0 none;
+	outline-style: none;
+	border-top: 0 none;
+	border-right: 0 none;
+	border-left: 0 none;
+	border-bottom: 1px dotted red;
+}
+
+.search{
+	border: 0 none;
+	outline-style: none;
+	border: 1px solid #999;
+	background: url(1.jpg) no-repeat right;
+}

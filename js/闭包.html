@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		function a() {
+
+			var num = 100;
+			function b() {
+				num ++;
+				console.log(num);
+			}
+			return b;
+		}
+
+		var demo = a();
+		demo();  //101
+		demo();  //102 aAO始终没有改变
+
+	</script>
+
+</body>
+</html>

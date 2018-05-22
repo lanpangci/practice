@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		function eater() {
+
+			var food = "";
+			var obj = {   //相当于数组
+
+				eat : function () {
+
+					console.log("I am eating " + food);
+					food = "";
+				},
+				push : function (myFood) {
+					food = myFood;
+				}
+			}
+			return obj;
+		}
+		var eater1 = eater();
+
+		eater1.push("banana");
+		eater1.eat();
+
+	</script>
+
+</body>
+</html>

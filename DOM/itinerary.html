@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cities</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica", "Arial", sans-serif;
+            background: #fff;
+            color: #000;
+        }
+        table {
+            margin: 1em auto;
+            /* 不会框柱标题caption */
+            border: 1px solid #699;
+        }
+        /* 与表格其实是分离的 */
+        caption {
+            padding: .2em;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        th {
+            font-weight: normal;
+            font-style: italic;
+            text-align: left;
+            border: 1px dotted #699;
+            background: #9cc;
+        }
+        th, td {
+            width: 10em;
+            padding: .5em;
+        }
+        /* CSS3 */
+        /* tr:nth-child(odd) {
+            background: #ffc;
+        }
+        tr:nth-child(event) {
+            background: #fff;
+        } */
+        .bg0 {
+            background: #fff;
+        }
+        .bg1 {
+            background: #ffc;
+        }
+
+        /* tr:hover {
+            font-weight: bold;
+        } */
+    </style>
+</head>
+<body>
+    <table>
+        <caption>Itinerary</caption>
+        <thead>
+            <tr>
+                <th>When</th>
+                <th>Where</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>June 9th</td>
+                <td>Portland, <abbr title="Oregon">OR</abbr></td>
+            </tr>
+            <tr>
+                <td>June 10th</td>
+                <td>Seattle, <abbr title="Washington">WA</abbr></td>
+            </tr>
+            <tr>
+                <td>June 12th</td>
+                <td>Sacramento, <abbr title="California">CA</abbr></td>
+            </tr>
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        // var tr = document.getElementsByTagName("tr");
+        // var len = tr.length;
+        // for(var i = 0; i < len; i++) {
+        //     if(i % 2 == 0) {
+        //         tr[i].setAttribute("class", "bg0");
+        //     }else {
+        //         tr[i].setAttribute("class", "bg1");
+        //     }
+        // }
+        function stripeTables() {
+            if(!document.getElementsByTagName) {
+                return false;
+            }
+            var table = document.getElementsByTagName("table");
+            var odd;
+            var table_len = table.length;
+            for(var i = 0; i < table_len; i++) {
+                odd = false;
+                var tr = table[i].getElementsByTagName("tr");
+                var tr_len = tr.length;
+                for(var j = 0; j < tr_len; j++) {
+                    // if(j % 2 == 0) {
+                    //     tr[j].setAttribute("class", "bg0");
+                    // }else {
+                    //     tr[j].setAttribute("class", "bg1");
+                    // }
+                    if(odd) {
+                        tr[j].style.background = "#ffc";
+                        odd = false;
+                    }else {
+                        odd = true;
+                    }
+                }
+            }
+        }
+        function highlightRows() {
+            var tr = document.getElementsByTagName("tr");
+            var len = tr.length;
+            for(var i = 0; i < len; i++) {
+                //闭包
+                // tr[i].onmousedown = function () {
+                //     this.style.fontWeight = "bold";
+                // }
+                // tr[i].onmouseup = function () {
+                //     this.style.fontWeight = "normal";
+                // }
+                tr[i].onmouseover = function () {
+                    this.style.fontWeight = "bold";
+                }
+                tr[i].onmouseout = function () {
+                    this.style.fontWeight = "normal";
+                }
+            }
+        }
+
+
+        stripeTables();
+        highlightRows();
+    </script>
+</body>
+</html>

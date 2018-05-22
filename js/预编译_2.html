@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		/*
+			GO{
+				test : function;
+				a : 10;
+				c : 234;
+			}
+		*/
+
+		function test() {
+			console.log(b);  //undefined
+			if(a){
+				var b = 100;
+			}
+			c = 234;
+			console.log(c); //234
+		}
+
+		var a;
+
+		/*
+			AO{
+				b : undefined;
+			}
+		*/
+
+		test();
+		a = 10;
+		console.log(c);  //234
+		
+	</script>
+
+</body>
+</html>

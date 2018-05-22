@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script src="../有用的/移动效果.js"></script> -->
+</head>
+<body>
+    <div class="box" style="width: 100px;height: 100px;background: red;position: absolute;left: 100px;top: 50px;">
+
+    </div>
+    <script type="text/javascript">
+        // function moveMessage() {
+        //     var div = document.getElementsByClassName("box")[0];
+        //     var xpos = parseInt(div.style.left);
+        //     var ypos = parseInt(div.style.top);
+        //     if(xpos == 200 & ypos == 100) {
+        //         return true;
+        //     }
+        //     if(xpos < 200) {
+        //         xpos++;
+        //     }
+        //     if(xpos > 200) {
+        //         xpos--;
+        //     }
+        //     if(ypos < 100) {
+        //         ypos++;
+        //     }
+        //     if(ypos > 100) {
+        //         ypos--;
+        //     }
+        //     div.style.left = xpos + "px";
+        //     div.style.top = ypos + "px";
+        //     movement = setTimeout("moveMessage()", 10); //循环
+        // }
+        function moveMessage(elem, final_x, final_y, interval) {
+    var xpos = parseInt(elem.style.left);
+    var ypos = parseInt(elem.style.top);
+    if(elem.movement) {
+        clearTimeout(elem.movement);
+    }
+    if(xpos == final_x & ypos == final_y) {
+        return true;
+    }
+    if(xpos < final_x) {
+        xpos++;
+    }
+    if(xpos > final_x) {
+        xpos--;
+    }
+    if(ypos < final_y) {
+        ypos++;
+    }
+    if(ypos > final_y) {
+        ypos--;
+    }
+    elem.style.left = xpos + "px";
+    elem.style.top = ypos + "px";
+    elem.movement = setTimeout(moveMessage(elem, final_x, final_y, interval), 10); //循环
+}
+        var div = document.getElementsByClassName("box")[0];
+        moveMessage(div, 300, 400, 100),10;
+    </script>
+</body>
+</html>

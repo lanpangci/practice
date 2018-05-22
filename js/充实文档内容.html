@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Explaining  the Document Object Model</title>
+    <style type="text/css">  
+        html {
+            background: #ccc;
+        }
+        body {
+            font-family: "Helvetica", "Arial", sans-serif;
+            font-size: 10pt;
+            margin: 1em 15%;
+            background: #fff;
+        }
+        abbr {
+            text-decoration: none;
+            border: 0;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="index.html" accesskey="1">Home</a></li>
+        <li><a href="search.html" accesskey="4">Search</a></li>
+        <li><a href="contact.html" accesskey="9">Contact</a></li>
+    </ul>
+    <h1>What is the Document Object Model?</h1>
+    <p>
+        The <abbr title="World Wide Web Consortium">W3C</abbr> defines the <abbr title="Document Obejct Model">DOM</abbr> as:
+    </p>
+    <blockquote cite="http://www.w3.org/DOM/">
+        <p>
+            A platform and language-neutral interface that will allow programs and scripts to dynamically access and update the content,structure and style of documents.
+        </p>
+    </blockquote>
+    <p>
+        It is an <abbr title="Application Programming Interface">API</abbr> that can be used to navigate <abbr title="HyperText Markup Language">HTML</abbr> and <abbr title="eXtensible Markup Language">XML</abbr> docuements.
+    </p>
+
+    <script type="text/javascript">
+        function displayAbbreviations () {
+            if(!document.getElementsByTagName || !document.createElement || !document.createTextNode) {
+                return false;
+            }
+            var abbr = document.getElementsByTagName("abbr");
+            var len = abbr.length;
+            var defs = new Array();
+            if(len < 1) {
+                return false;
+            }
+            for(var i = 0; i < len; i++) {
+                var current_abbr = abbr[i];
+                if(current_abbr.childNodes.length < 1) { //不能识别abbr的浏览器在返回子节点个数时，总是返回0
+                    continue;
+                }
+                var title = current_abbr.getAttribute("title");
+                var key = current_abbr.innerText;
+                defs[key] = title; 
+            }
+            var dl = document.createElement("dl");
+            for(key in defs) {
+                var dt = document.createElement("dt");
+                var dd = document.createElement("dd");
+                title = defs[key];
+                var textKey = document.createTextNode(key); //必须转换成文本
+                var textTitle = document.createTextNode(title);
+                dt.appendChild(textKey);
+                dd.appendChild(textTitle);
+                dl.appendChild(dt);
+                dl.appendChild(dd);
+            }
+            if(dl.childNodes.length < 1) { //不能识别abbr，dl的元素个数为0
+                return false;
+            }
+            var h2 = document.createElement("h2");
+            var text2 = document.createTextNode("Abbreviations");
+            h2.appendChild(text2);
+            var body = document.getElementsByTagName("body")[0];
+            var script = document.getElementsByTagName("script")[0];
+            body.insertBefore(h2, script);
+            body.insertBefore(dl, script);
+        }
+
+        function displayCitations () {
+            var blockquote = document.getElementsByTagName("blockquote");
+            var len = blockquote.length;
+            var cite = new Array();
+            for(var i = 0; i < len; i++) {
+                if(blockquote[i].getAttribute("cite")){
+                    cite[i] = blockquote[i].getAttribute("cite");
+                }
+            }
+            for(i in cite) {
+                if(cite[i]) {
+                    var a = document.createElement("a");
+                    var sup = document.createElement("sup");
+                    var text = document.createTextNode(cite[i]);
+                    a.setAttribute("href", cite[i]);
+                    a.appendChild(text);
+                    sup.appendChild(a);
+                    blockquote[i].appendChild(sup);
+                }
+                
+            }
+        }
+
+        function displayAccesskeys () {
+            if(!document.getElementsByTagName || !document.createElement || !document.createTextNode) {
+                return false;
+            }
+
+            var links = document.getElementsByTagName("a");
+            var len = links.length;
+            var akeys = new Array();
+            for(var i = 0; i < len; i++) {
+                var current_link = links[i];
+                if(!current_link.getAttribute("accesskey")) {
+                    continue;
+                }
+                var key = current_link.getAttribute("accesskey");
+                var text = current_link.lastChild.nodeValue;
+                akeys[key] = text;
+            }
+            console.log(akeys);
+            var list = document.createElement("ul");
+            for(key in akeys) {
+                text = akeys[key];
+                var str = key + ":" +text;
+                var item = document.createElement("li");
+                var item_text = document.createTextNode(str);
+                item.appendChild(item_text);
+                list.appendChild(item);
+            }
+            var header = document.createElement("h3");
+            var header_text = document.createTextNode("Accesskeys");
+            header.appendChild(header_text);
+            var body = document.getElementsByTagName("body")[0];
+            var script = document.getElementsByTagName("script")[0];
+            body.insertBefore(header, script);
+            body.insertBefore(list, script);
+        }
+
+        displayAbbreviations();
+        displayCitations();
+        displayAccesskeys();
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            padding: 10px;
+            border: 10px solid black;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <iframe src="C:\Users\Administrator\练手项目\扫雷\扫雷.html" frameborder="0"></iframe>
+    <a href="#789">嗯</a>
+    <div>
+        <p>我想看动漫</p>
+        <p>我想打游戏</p>
+    </div>
+    <script type="text/javascript">
+        // myWindow = window.open('', 'MyName', 'width=200,height=100')
+        // myWindow.document.write("This is 'myWindow'")
+        // myWindow.focus()
+        // myWindow.opener.document.write("This is the parent window")
+    </script> -->
+    <!-- <h2>在 JavaScript 中创建 JSON 对象</h2>
+
+<p>
+Name: <span id="jname"></span><br />
+Age: <span id="jage"></span><br />
+Address: <span id="jstreet"></span><br />
+Phone: <span id="jphone"></span><br />
+</p>
+
+<script type="text/javascript">
+var JSONObject= {
+"name":"Bill Gates",
+"street":"Fifth Avenue New York 666",
+"age":56,
+"phone":"555 1234567"};
+document.getElementById("jname").innerHTML=JSONObject.name
+document.getElementById("jage").innerHTML=JSONObject.age
+document.getElementById("jstreet").innerHTML=JSONObject.street
+document.getElementById("jphone").innerHTML=JSONObject.phone
+</script> -->
+    <!-- <div class="box">
+
+    </div> -->
+    <!-- <label for="demo">usename</label>
+    <input id="demo" type="text"> -->
+    <!-- <button>显示图片</button> -->
+    <ul></ul>
+    <script type="text/javascript">
+        // var div = document.getElementsByTagName('div')[0];
+        // div.id = 'ab';
+        // div.setAttribute('name', 'ab');
+        // var oBtn = document.getElementsByTagName('button')[0];
+        // oBtn.onclick = function () {
+        //     var oImg = new Image();
+        //     oImg.src = 'C:/Users/Administrator/Desktop/timg (1).jpg';
+        //     oImg.onload = function () {
+        //         document.body.appendChild(oImg);
+        //     }
+        // }
+        // var oLabel = document.getElementsByTagName('label')[0];
+        // var oInput = document.getElementsByTagName('input')[0];
+        // oLabel.onclick = function () {
+        //     console.log("label");
+        // }
+        // oInput.onclick = function () {
+        //     console.log("input");
+        // }
+        // var arr = ['a', 'b', 'c', 'd', 'e'];
+        // var str = '';
+        // for(var i = 0; i < 3; i++) {
+        //     str += arr[(Math.floor(Math.random() * 3) + 2)];
+        // }
+        // console.log(str);
+        //文档碎片
+        var oUl = document.getElementsByTagName('ul')[0];
+        // var oDiv = document.createElement('div'); 
+        var str = '';
+        for(var i = 0; i < 10000; i++) {
+            // var oLi = document.createElement('li');
+            // oLi.innerText = i;
+            // oDiv.appendChild(oLi);
+            str += '<li>' + i +'</li>';
+        }
+        oUl.innerHTML = str;
+    </script>
+</body>
+
+</html>

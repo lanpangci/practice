@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        Father.prototype.lastName = 'Deng';
+        function Father() {
+        }
+        function Son() {   
+        }
+        function inherit(Target, Origin) {
+            function F() {}
+            F.prototype = Origin.prototype;
+            Target.prototype = new F();  //F没有constructor
+            Target.prototype.constructor = Target;  //constructor重新指向本身
+            Target.prototype.uber == Origin.prototype  //希望构造对象知道真正继承自谁
+        }
+        inherit(Son, Father);  //可以实现效果
+        Son.prototype.sex = 'male';
+        var son = new Son();
+        // son.__proto__ --> new F().__proto__ --> Father.prototype
+        var father = new Father();
+
+        //inherit(Son, Father); 不能实现效果；
+    </script>
+</body>
+</html>

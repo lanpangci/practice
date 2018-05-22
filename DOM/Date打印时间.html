@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function nowTime() {
+            var date = new Date();
+            var year = date.getFullYear(),
+                month = date.getMonth() + 1,
+                day = date.getDate(),
+                hour = date.getHours(),
+                minute = date.getMinutes(),
+                second = date.getSeconds();
+            console.log('当前时间是 ' + year + '年' + month + '月' + day + '日' + hour + '时' + minute + '分' + second + '秒');
+        }
+    </script>
+</body>
+</html>

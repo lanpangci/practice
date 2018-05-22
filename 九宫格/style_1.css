@@ -1,0 +1,19 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.square_0,.square_1,.square_2,
+.square_3,.square_4,.square_5,
+.square_6,.square_7,.square_8{
+
+	background-color: orange;
+	float: left;
+	width: 28%;
+	padding-bottom: 28%;
+	margin-left: 4%;
+	margin-bottom: 4%;
+	border-radius: 20%;
+}
+.square_0,.square_1,.square_2{
+	margin-top: 4%;/*将九宫格顶部空出空间*/
+}

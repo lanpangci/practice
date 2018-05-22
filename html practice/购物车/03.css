@@ -1,0 +1,9 @@
+a{
+	display: block;
+	width: 67px;
+	height: 32px;
+	background: url(110.png) top no-repeat;
+}
+a:hover{
+	background: url(110.png) bottom no-repeat;
+}

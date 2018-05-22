@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		// GO{
+		// 	bar : function;
+		// }
+
+		// AO{
+		//		foo : 10;
+		// }
+		console.log(bar());  //20
+		function bar() {
+			console.log(foo);  //undefined
+			foo = 20;
+			var foo;
+			console.log(foo);  //20
+			return foo;
+		}
+
+	</script>
+</body>
+</html>
